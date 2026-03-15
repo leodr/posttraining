@@ -1,0 +1,128 @@
+[
+  {
+    "category": "School subjects",
+    "topics": [
+      {
+        "name": "Math",
+        "description": "Arithmetic, algebra, geometry, trigonometry, calculus. Explaining concepts, solving problems, building intuition."
+      },
+      {
+        "name": "Physics",
+        "description": "Mechanics, thermodynamics, electromagnetism, optics, modern physics. Conceptual explanations and problem-solving."
+      },
+      {
+        "name": "Chemistry",
+        "description": "Atomic structure, bonding, reactions, organic chemistry, stoichiometry. Explaining why things work the way they do."
+      },
+      {
+        "name": "Biology",
+        "description": "Cells, genetics, evolution, ecology, anatomy. Making complex systems understandable."
+      },
+      {
+        "name": "History",
+        "description": "Ancient, medieval, modern, world, and regional history. Events, causes, consequences, and patterns."
+      },
+      {
+        "name": "Geography",
+        "description": "Physical and human geography. Climate, landforms, populations, economies, cultures."
+      },
+      {
+        "name": "Literature",
+        "description": "Analysis of texts, themes, characters, literary devices. Discussing books, poems, plays."
+      },
+      {
+        "name": "Philosophy",
+        "description": "Ethics, epistemology, metaphysics, logic. Engaging with arguments and ideas."
+      },
+      {
+        "name": "Economics",
+        "description": "Micro and macro. Supply and demand, markets, policy, trade. Intuitive explanations."
+      },
+      {
+        "name": "Computer science",
+        "description": "Programming basics, algorithms, data structures, how computers work."
+      },
+      {
+        "name": "Art and music",
+        "description": "History, movements, techniques, appreciation. Discussing works and artists."
+      },
+      {
+        "name": "Languages and linguistics",
+        "description": "Grammar, vocabulary, language learning tips, how languages work."
+      }
+    ]
+  },
+  {
+    "category": "Creative",
+    "topics": [
+      {
+        "name": "Poetry",
+        "description": "Writing poems in various forms. Haikus, sonnets, free verse. Playful and serious."
+      },
+      {
+        "name": "Short fiction",
+        "description": "Stories, flash fiction, character sketches, dialogue. Different genres and styles."
+      },
+      {
+        "name": "Jokes and wordplay",
+        "description": "Puns, riddles, witty observations. Light and fun."
+      },
+      {
+        "name": "Brainstorming",
+        "description": "Generating ideas for projects, names, gifts, activities. Creative problem-solving."
+      }
+    ]
+  },
+  {
+    "category": "Advice",
+    "topics": [
+      {
+        "name": "People",
+        "description": "Relationships, friendships, family, conflict resolution, communication, social situations."
+      },
+      {
+        "name": "Life",
+        "description": "Career decisions, goals, habits, productivity, big life choices, finding direction."
+      }
+    ]
+  },
+  {
+    "category": "Practical",
+    "topics": [
+      {
+        "name": "Planning",
+        "description": "Organizing projects, trips, schedules, events. Breaking big things into steps."
+      },
+      {
+        "name": "How-to",
+        "description": "Cooking, repairs, learning new skills, technical questions. Clear instructions."
+      }
+    ]
+  },
+  {
+    "category": "Emotional support",
+    "topics": [
+      {
+        "name": "Venting",
+        "description": "Listening and acknowledging. Not jumping to solutions. Being present."
+      },
+      {
+        "name": "Encouragement",
+        "description": "Motivation, reassurance, celebrating progress. Genuine, not hollow."
+      }
+    ]
+  },
+  {
+    "category": "Casual conversation",
+    "topics": [
+      {
+        "name": "Greetings",
+        "description": "Hi, hello, how are you. Warm and natural responses without over-explaining."
+      },
+      {
+        "name": "Small talk",
+        "description": "Chitchat, banter, light topics. Relaxed and friendly."
+      }
+    ]
+  }
+]

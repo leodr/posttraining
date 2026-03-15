@@ -1,0 +1,26 @@
+output_dir = "outputs/qwen3-4b-sft"
+
+[model]
+name = "Qwen/Qwen3-4B-Base"
+attn = "flash_attention_2"
+
+[model.ac]
+
+[data]
+name = "datagen/dataset"
+seq_len = 4096
+batch_size = 32
+micro_batch_size = 1
+
+[optim]
+lr = 2e-5
+
+[scheduler]
+type = "cosine"
+warmup_steps = 50
+min_lr = 2e-6
+
+[ckpt]
+interval = 200
+
+[ckpt.weights]
