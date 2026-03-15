@@ -2,7 +2,6 @@ output_dir = "outputs/qwen3-4b-sft"
 
 [model]
 name = "Qwen/Qwen3-4B-Base"
-attn = "flash_attention_2"
 
 [model.ac]
 
@@ -16,9 +15,12 @@ micro_batch_size = 1
 lr = 2e-5
 
 [scheduler]
-type = "cosine"
+type = "linear"
 warmup_steps = 50
-min_lr = 2e-6
+
+[wandb]
+project = "k2.5-distill"
+name = "qwen3-4b-sft"
 
 [ckpt]
 interval = 200
