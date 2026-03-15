@@ -7,7 +7,7 @@ attn = "flash_attention_2"
 [model.ac]
 
 [data]
-name = "datagen/dataset"
+name = "leodriesch/k2.5-distill"
 seq_len = 4096
 batch_size = 32
 micro_batch_size = 1

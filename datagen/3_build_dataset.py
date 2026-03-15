@@ -1,12 +1,13 @@
-"""Convert conversation JSONL files into a HuggingFace dataset in prompt-completion format.
+"""Convert conversation JSONL files into a HuggingFace dataset and push to the Hub.
 
 The SFT trainer expects each example to have:
   - prompt: list of messages forming the input (system + user)
   - completion: list of messages forming the expected output (assistant)
 
 Usage:
-    uv run python 3_build_dataset.py                              # default: ./conversations -> ./dataset
-    uv run python 3_build_dataset.py --input-dir ./conversations --output-dir ./dataset
+    uv run python 3_build_dataset.py <hf_repo_id>
+    uv run python 3_build_dataset.py myorg/my-sft-dataset
+    uv run python 3_build_dataset.py myorg/my-sft-dataset --input-dir ./conversations --private
 """
 
 import argparse
@@ -16,7 +17,7 @@ from pathlib import Path
 from datasets import Dataset
 
 
-def convert_messages(messages: list[dict]) -> dict:
+def convert_messages(messages: list[dict]) -> dict | None:
     """Split a messages list into prompt (everything up to the last user message)
     and completion (everything after)."""
     last_user_idx = -1
@@ -37,9 +38,10 @@ def convert_messages(messages: list[dict]) -> dict:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Build SFT dataset from conversation JSONL files.")
+    parser = argparse.ArgumentParser(description="Build SFT dataset and push to HuggingFace Hub.")
+    parser.add_argument("repo_id", help="HuggingFace repo ID (e.g. myorg/my-sft-dataset)")
     parser.add_argument("--input-dir", type=Path, default=Path("conversations"))
-    parser.add_argument("--output-dir", type=Path, default=Path("dataset"))
+    parser.add_argument("--private", action="store_true", help="Make the dataset private")
     args = parser.parse_args()
 
     jsonl_files = sorted(args.input_dir.glob("*.jsonl"))
@@ -63,8 +65,8 @@ def main():
 
     ds = Dataset.from_list(rows)
     ds = ds.shuffle(seed=42)
-    ds.save_to_disk(str(args.output_dir))
-    print(f"Saved dataset to {args.output_dir}")
+    ds.push_to_hub(args.repo_id, private=args.private)
+    print(f"Pushed dataset to https://huggingface.co/datasets/{args.repo_id}")
 
 
 if __name__ == "__main__":
